@@ -5,7 +5,7 @@
           </a>
         <form class="d-flex align-items-center">
             <a [routerLink]="['/characters']" class="m-md-0 pe-md-3 text-white fw-bold">Personajes</a>
-            <input class="form-control me-2 bg-info border-white text-white" type="search" placeholder="Buscar" (change)="search()">
+            <input class="form-control me-2 bg-info border-white text-white" type="search" placeholder="Buscar" (keyup)="search($event)">
         </form>
     </div>
 </nav>

@@ -81,5 +81,8 @@ export class CharactersComponent implements OnInit {
     });
   }
   
+  change(res:any){
+    this.characters = res;
+  }
 
 }

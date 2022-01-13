@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Characters } from 'src/app/interfaces/characters';
+import { CharactersService } from 'src/app/services/characters.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,13 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  @Output() charactersOut = new EventEmitter<any>();
+
+  constructor(
+    private _characterService:CharactersService
+  ) { }
 
   ngOnInit(): void {
   }
 
-  search(){
-    console.log("");
+  search(event:any){
+    console.log("HOLA",event.target.value);
+    
+    this._characterService.searchNameCharacter(event.target.value).toPromise().then((res:Characters)=>{
+      console.log(res);
+      this.charactersOut.emit(res);
+    });
     
   }
 
