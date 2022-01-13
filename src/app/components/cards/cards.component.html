@@ -1,0 +1,9 @@
+<div class="card border-info rounded-3 shadow">
+    <img [src]="image" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <p>Estado: {{status}}</p>
+        <p *ngIf="type">Tipo: {{type}}</p>
+        <p>Género: {{gender}}</p>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<nav class="navbar navbar-light bg-info">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="https://www.emp-online.es/dw/image/v2/BBQV_PRD/on/demandware.static/-/Library-Sites-EMPSharedLibrary/es_ES/dw5adbf8e3/logos/black/rick_and_morty.png?sw=180&sh=85&sm=fit&sfrm=png" alt="" width="150">
+          </a>
+        <form class="d-flex align-items-center">
+            <a [routerLink]="['/characters']" class="m-md-0 pe-md-3 text-white fw-bold">Personajes</a>
+            <input class="form-control me-2 bg-info border-white text-white" type="search" placeholder="Buscar" (change)="search()">
+        </form>
+    </div>
+</nav>

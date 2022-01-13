@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class="container text-center pt-4">
+    <h2 class="text-uppercase">Personajes</h2>
+    <div class="row mt-5">
+        <div *ngFor="let character of characters?.results" class="col-md-3 mb-md-4 h-100">
+            <app-cards [character]="character"></app-cards>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <nav>
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link text-info bg-white" (click)="firstPage()"><<</a></li>
+                <li class="page-item"><a class="page-link text-info bg-white" (click)="previousPage()"><</a></li>
+
+                <li class="page-item" *ngFor="let page of numArray();let i = index" ><a class="page-link text-info" (click)="gotoPage(actualPage+i)" [ngClass]="actualPage==actualPage+i ? 'bg-dark':''">{{actualPage+i}}</a></li>
+
+                <li class="page-item text-info"><a class="page-link text-info" (click)="nextPage()">></a></li>
+                <li class="page-item text-info"><a class="page-link text-info" (click)="lastPage()">>></a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
